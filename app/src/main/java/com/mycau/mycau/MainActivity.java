@@ -2,6 +2,7 @@ package com.mycau.mycau;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.HashMap;
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         passed = (EditText)findViewById(R.id.password);
         sub = (Button)findViewById(R.id.submit);
         pb = (ProgressBar)findViewById(R.id.progressBar);
-        if(username != ""){//无账号
+        if(!username.equals("")){//无账号
             login();
         }
     }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="depart">
+        <item>东校区1号公寓（公主楼）A座</item>
+        <item>东校区1号公寓（公主楼）B座</item>
+        <item>东校区2号公寓（南楼，女生入口）</item>
+        <item>东校区2号公寓（北楼，男生入口）</item>
+        <item>东校区3号公寓</item>
+        <item>东校区5号公寓（五四楼）</item>
+        <item>东校区8号公寓（小红楼）</item>
+        <item>西校区1号楼</item>
+        <item>西校区2号楼</item>
+        <item>西校区3号楼</item>
+        <item>西校区4号楼</item>
+        <item>西校区5号楼</item>
+        <item>西校区6号楼</item>
+        <item>西校区7号楼</item>
+        <item>西校区8号楼</item>
+        <item>西校区10号楼</item>
+        <item>西校区11号楼</item>
+        <item>西校区12号楼</item>
+        <item>西校区13号楼</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="part">
+        <item>东校区</item>
+        <item>西校区</item>
+        <item>全选</item>
+    </string-array>
+    <string-array name="trans">
+        <item>步行</item>
+        <item>自行车</item>
+        <item>公交车/地铁</item>
+        <item>私家车/出租车</item>
+    </string-array>
+</resources>

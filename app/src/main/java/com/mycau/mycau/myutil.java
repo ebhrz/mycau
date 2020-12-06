@@ -29,7 +29,7 @@ import okhttp3.Response;
 
 public class myutil {
 
-    private static OkHttpClient client;
+    private static OkHttpClient client = null;
 
     private static OkHttpClient getUnsafeOkHttpClient() {
         try {
@@ -87,7 +87,10 @@ public class myutil {
 
     public static String get(String url, Map<String,String> headers) {
 
-        client = getUnsafeOkHttpClient();
+        if(client == null)
+        {
+            client = getUnsafeOkHttpClient();
+        }
         Request.Builder builder = new Request.Builder()
                 .url(url);
         headers.forEach((key,value)->{
@@ -105,7 +108,10 @@ public class myutil {
     }
 
     public static String post(String url, Map<String,String> postdata,Map<String,String> headers) {
-        client = getUnsafeOkHttpClient();
+        if(client == null)
+        {
+            client = getUnsafeOkHttpClient();
+        }
         FormBody.Builder bodybuilder=new FormBody.Builder();
         postdata.forEach((key,value)->{
             bodybuilder.add(key,value);
