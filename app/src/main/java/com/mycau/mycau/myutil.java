@@ -1,5 +1,7 @@
 package com.mycau.mycau;
 
+import android.os.Build;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
@@ -58,7 +60,9 @@ public class myutil {
             final SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
 
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
-            builder.sslSocketFactory(sslSocketFactory);
+            if (Build.VERSION.SDK_INT < 29) {
+                builder.sslSocketFactory(sslSocketFactory);
+            }
             builder.hostnameVerifier(new HostnameVerifier() {
                 @Override
                 public boolean verify(String hostname, SSLSession session) {

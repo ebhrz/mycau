@@ -161,7 +161,11 @@ public class Main extends AppCompatActivity {
         EditText timeet = (EditText)view;
         String thistime = timeet.getText().toString();
         TimePickerDialog pickerDialog = new TimePickerDialog(Main.this, (TimePickerDialog.OnTimeSetListener) (view1, hourOfDay, minute) -> {
-            timeet.setText(hourOfDay + ":" + minute + ":00");
+            String hour = "00"+hourOfDay;
+            hour = hour.substring(hour.length()-2);
+            String min = "00"+minute;
+            min = min.substring(min.length()-2);
+            timeet.setText(hour + ":" + min + ":00");
             ;
         }, Integer.parseInt(thistime.substring(0,2)), Integer.parseInt(thistime.substring(3,5)), true);
 
@@ -172,7 +176,11 @@ public class Main extends AppCompatActivity {
         EditText timeet = (EditText)view;
         String thistime = timeet.getText().toString();
         TimePickerDialog pickerDialog = new TimePickerDialog(Main.this, (TimePickerDialog.OnTimeSetListener) (view1, hourOfDay, minute) -> {
-            timeet.setText(hourOfDay + ":" + minute + ":00");
+            String hour = "00"+hourOfDay;
+            hour = hour.substring(hour.length()-2);
+            String min = "00"+minute;
+            min = min.substring(min.length()-2);
+            timeet.setText(hour + ":" + min + ":00");
             ;
         }, Integer.parseInt(thistime.substring(0,2)), Integer.parseInt(thistime.substring(3,5)), true);
 
@@ -385,6 +393,13 @@ public class Main extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(getApplicationContext(),"时间格式不正确",Toast.LENGTH_LONG).show();
         }
-        makesubmit();
+        try{
+            makesubmit();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(),"未知错误,是否有未完成申请?",Toast.LENGTH_LONG).show();
+        }
+
     }
 }
